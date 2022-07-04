@@ -22,6 +22,7 @@ const calculateRemainingTime = (expirationTime) => {
 const retrieveStoredToken = () => {
   const storedToken = localStorage.getItem('token'); 
   const storedExpirationTime = localStorage.getItem('expirationTime'); 
+  console.log(`Stored Token: ${storedToken} Stored Expiration Time: ${storedExpirationTime}`);
   const remainingTime = calculateRemainingTime(storedExpirationTime); 
   console.log(`Remaining Time: ${remainingTime}`);
   if (remainingTime <= 3600) {
