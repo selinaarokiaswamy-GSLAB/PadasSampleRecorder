@@ -21,7 +21,7 @@ const TheRecorder = ({fileName}) => {
     fd.append('audio', audioData.blob, `${fileName}.wav`);
     const url = URL.createObjectURL(audioData.blob);
     const token = localStorage.getItem('token');
-    axios.post(`http://${process.env.REACT_APP_BACKEND}:${process.env.REACT_APP_BACKEND_PORT}/api/file/upload`, fd, {
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/file/upload`, fd, {
       headers: {
         'enctype': 'multipart/form-data boundary=XXXX',
         'x-access-token': token,
