@@ -55,7 +55,7 @@ const AuthForm = () => {
         if (isLogin) {
           res.json().then(data => {
             console.log(data.expiresIn); 
-            const expirationTime = new Date((new Date().getTime() + (+data.expiresIn * 1000)));
+            const expirationTime = new Date((new Date().getTime() + (+data.expiresIn)));
             authCtx.login(data.accessToken, expirationTime.toISOString()); 
             navigate('/', { replace: true }); 
           });  
