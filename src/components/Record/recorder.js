@@ -26,7 +26,11 @@ const TheRecorder = ({fileName}) => {
         'enctype': 'multipart/form-data boundary=XXXX',
         'x-access-token': token,
       }
-    }).then(res => {console.log(res)});
+    }).then(res => {
+      if (res.ok) {
+        alert("Audio uploaded successfully to backend server!");
+      }
+    });
     // const tmp = new Audio(url); 
     // tmp.play();
     setAudioURL(url); 
