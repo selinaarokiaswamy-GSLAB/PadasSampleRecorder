@@ -11,8 +11,8 @@ const AuthContext = React.createContext({
 
 
 const calculateRemainingTime = (expirationTime) => {
-  const currentTime = new Date().getTime(); 
-  const adjExpirationTime = new Date(expirationTime).getTime(); 
+  const currentTime = new Date().getTime().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'}); 
+  const adjExpirationTime = new Date(expirationTime).getTime().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'}); 
   console.log(`Current Time: ${currentTime} ADJExpirationTime: ${adjExpirationTime}`)
   const remainingDuration = adjExpirationTime - currentTime; 
   return remainingDuration; 
