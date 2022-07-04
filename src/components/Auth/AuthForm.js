@@ -55,7 +55,7 @@ const AuthForm = () => {
         if (isLogin) {
           res.json().then(data => {
             console.log(data.expiresIn); 
-            const expirationTime = new Date((new Date().getTime() + (+data.expiresIn))).toLocaleString(undefined, {timeZone: 'Asia/Kolkata'});
+            const expirationTime = new Date((new Date().getTime().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'}) + (+data.expiresIn)));
             authCtx.login(data.accessToken, expirationTime.toISOString()); 
             navigate('/', { replace: true }); 
           });  
