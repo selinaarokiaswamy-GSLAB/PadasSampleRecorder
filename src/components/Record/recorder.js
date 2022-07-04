@@ -27,7 +27,7 @@ const TheRecorder = ({fileName}) => {
         'x-access-token': token,
       }
     }).then(res => {
-      if (res.ok) {
+      if (res.status == 200) {
         alert("Audio uploaded successfully to backend server!");
       }
     });
