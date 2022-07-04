@@ -29,13 +29,13 @@ const AuthForm = () => {
     let body; 
     
     if (isLogin) {
-      url = `${REACT_APP_BACKEND_URL}/api/auth/signin`;
+      url = `${process.env.REACT_APP_BACKEND_URL}/api/auth/signin`;
       body = {
         'username': enteredEmail, 
         'password': enteredPassword
       }
     } else {
-      url = `${REACT_APP_BACKEND_URL}/api/auth/signup`;
+      url = `${process.env.REACT_APP_BACKEND_URL}/api/auth/signup`;
       body = {
         'username': enteredEmail, 
         'email': enteredEmail, 
