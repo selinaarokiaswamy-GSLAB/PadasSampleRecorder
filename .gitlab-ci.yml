@@ -1,0 +1,25 @@
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - init
+  - deploy_prod
+
+init:
+  stage: init
+  image: node:14.19.0
+  script:
+    - npm install
+
+deploy_production:
+  image: node:14.19.0
+  stage: deploy_prod
+  script:
+    - git push https://$HEROKU_USER:$HEROKU_API@git.heroku.com/padas-recorder-react.git HEAD:main
+    - echo "Deployed to production Server"
+  environment:
+    name: production
+    url: https://padas-recorder-react.herokuapp.com/
+  only:
+    - main
