@@ -11,6 +11,8 @@ init:
   image: node:14.19.0
   script:
     - npm install
+  tags:
+    - laptop
 
 deploy_production:
   image: node:14.19.0
@@ -23,3 +25,5 @@ deploy_production:
     url: https://padas-recorder-react.herokuapp.com/
   only:
     - main
+  tags:
+    - laptop
