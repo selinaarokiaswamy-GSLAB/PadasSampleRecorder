@@ -15,12 +15,13 @@ function App() {
 			<Layout />
 			<Routes>
 				<Route exact path='/' element={<HomePage />}/>
-				{!authCtx.isLoggedIn && (
+				<Route path='/record' element={<RecordPage />}/>
+				{/* {!authCtx.isLoggedIn && (
 					<Route path='/auth' element={<AuthPage />}/>
 				)}
 				{authCtx.isLoggedIn && (
 					<Route path='/record' element={<RecordPage />}/>
-				)}
+				)} */}
 			</Routes>
 		</BrowserRouter>
 	);
