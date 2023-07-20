@@ -4,6 +4,7 @@ import AuthContext from '../../store/auth-context';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
+// import Text from '@mui/material/Text';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
@@ -33,14 +34,10 @@ const MainNavigation = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to='/'>
               Padas Recorder 
-            </Link>
-            {isLoggedIn && (
             <Link to='/record'>
               Record
             </Link>
-            )}
           </Typography>
           {!isLoggedIn && (
             <Link to='/auth'>
